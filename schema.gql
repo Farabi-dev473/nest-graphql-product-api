@@ -1,0 +1,35 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Delete {
+  id: String!
+  deleted: Boolean!
+}
+
+type Transaction {
+  id: String!
+  quantity: Int!
+  time: String!
+  status: String!
+}
+
+type Product {
+  id: String!
+  transactions: [Transaction!]!
+}
+
+type Query {
+  products: [Product!]!
+  product(id: String!): Product!
+}
+
+type Mutation {
+  createProduct(quantity: Int!): Product!
+  deleteProduct(id: String!): Delete!
+}
+
+type Subscription {
+  createdProduct: Product!
+  deletedProduct: Delete!
+}
