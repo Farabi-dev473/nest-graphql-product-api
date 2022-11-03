@@ -26,7 +26,7 @@
 
 An Graphql based api where user can read, create, delete product & listen for realtime notification about newly created & deleted product
 
-### GraphQL Schema
+## GraphQL Schema
 
 #### Types
 ```
@@ -72,9 +72,9 @@ type Subscription {
 }
 ```
 
-### API Reference
+## API Reference
 
-##### Get All Products
+#### Get All Products
 ```
 query products {
   products {
@@ -87,7 +87,7 @@ query products {
   }
 }
 ```
-##### Get a specific product
+#### Get a specific product
 ```
 query product {
   product(id: "8e532ef8-88a2-44eb-8683-632badc2d106") {
@@ -101,7 +101,7 @@ query product {
 }
 ```
 
-##### Create a product 
+#### Create a product 
 ```
 mutation createProduct{
   createProduct(quantity: 14) {
@@ -115,7 +115,7 @@ mutation createProduct{
 }
 ```
 
-##### Delete a specific product
+#### Delete a specific product
 ```
 mutation deleteProduct{
   deleteProduct(id: "8e532ef8-88a2-44eb-8683-632badc2d106") {
@@ -125,7 +125,7 @@ mutation deleteProduct{
 }
 ```
 
-##### Real time notification - If any product is created
+#### Real time notification - If any product is created
 ```
 subscription createdProduct{
   createdProduct{
@@ -138,7 +138,7 @@ subscription createdProduct{
   }
 }
 ```
-##### Real time notification - If any product is deleted
+#### Real time notification - If any product is deleted
 ```
 subscription deletedProduct {
   deletedProduct{
