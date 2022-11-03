@@ -71,6 +71,82 @@ type Subscription {
   deletedProduct: Delete!
 }
 ```
+
+### API Reference
+
+##### Get All Products
+```
+query products {
+  products {
+    id
+    transactions {
+      id
+      quantity
+      time
+    }
+  }
+}
+```
+##### Get a specific product
+```
+query product {
+  product(id: "8e532ef8-88a2-44eb-8683-632badc2d106") {
+    id,
+    transactions{
+      id,
+      quantity,
+      time
+    }
+  }
+}
+```
+
+##### Create a product 
+```
+mutation createProduct{
+  createProduct(quantity: 14) {
+    id,
+    transactions{
+      id,
+      quantity,
+      time
+    }
+  }
+}
+```
+
+##### Delete a specific product
+```
+mutation deleteProduct{
+  deleteProduct(id: "8e532ef8-88a2-44eb-8683-632badc2d106") {
+    id,
+    deleted
+  }
+}
+```
+
+##### Real time notification - If any product is created
+```
+subscription createdProduct{
+  createdProduct{
+    id,
+    transactions{
+      id,
+      quantity,
+      time
+    }
+  }
+}
+```
+##### Real time notification - If any product is deleted
+```
+subscription deletedProduct {
+  deletedProduct{
+    id,
+    deleted
+  }
+}
+```
 [Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
 
 ## Installation
