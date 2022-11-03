@@ -22,7 +22,44 @@
   <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
   [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
 
-## Description
+# Products API
+
+An Graphql based api where user can read, create, delete product & listen for realtime notification about newly created & deleted product
+
+### GraphQL Schema
+```
+type Delete {
+  id: String!
+  deleted: Boolean!
+}
+
+type Transaction {
+  id: String!
+  quantity: Int!
+  time: String!
+  status: String!
+}
+
+type Product {
+  id: String!
+  transactions: [Transaction!]!
+}
+
+type Query {
+  products: [Product!]!
+  product(id: String!): Product!
+}
+
+type Mutation {
+  createProduct(quantity: Int!): Product!
+  deleteProduct(id: String!): Delete!
+}
+
+type Subscription {
+  createdProduct: Product!
+  deletedProduct: Delete!
+}
+```
 
 [Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
 
