@@ -27,6 +27,8 @@
 An Graphql based api where user can read, create, delete product & listen for realtime notification about newly created & deleted product
 
 ### GraphQL Schema
+
+#### Types
 ```
 type Delete {
   id: String!
@@ -44,23 +46,31 @@ type Product {
   id: String!
   transactions: [Transaction!]!
 }
+```
 
+#### Queries
+```
 type Query {
   products: [Product!]!
   product(id: String!): Product!
 }
+```
 
+#### Mutations
+```
 type Mutation {
   createProduct(quantity: Int!): Product!
   deleteProduct(id: String!): Delete!
 }
+```
 
+#### Subscriptions
+```
 type Subscription {
   createdProduct: Product!
   deletedProduct: Delete!
 }
 ```
-
 [Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
 
 ## Installation
