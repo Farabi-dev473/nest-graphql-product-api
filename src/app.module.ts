@@ -4,8 +4,6 @@ import { ConfigModule } from '@nestjs/config';
 import { GraphQLModule } from '@nestjs/graphql';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { join } from 'path';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
 import { Product } from './products/entities/Product.entity';
 import { Transaction } from './products/entities/Transaction.entity';
 import { ProductsModule } from './products/products.module';
@@ -32,7 +30,7 @@ import { ProductsModule } from './products/products.module';
     synchronize: true,
   }),
 ],
-  controllers: [AppController],
-  providers: [AppService],
+  controllers: [],
+  providers: [],
 })
 export class AppModule {}
