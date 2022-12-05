@@ -1,34 +1,21 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
-</p>
+# README
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+[![Nest Logo](https://nestjs.com/img/logo-small.svg)](http://nestjs.com/)
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+A progressive [Node.js](http://nodejs.org) framework for building efficient and scalable server-side applications.
 
-# Products API
+[![NPM Version](https://img.shields.io/npm/v/@nestjs/core.svg)](https://www.npmjs.com/\~nestjscore) [![Package License](https://img.shields.io/npm/l/@nestjs/core.svg)](https://www.npmjs.com/\~nestjscore) [![NPM Downloads](https://img.shields.io/npm/dm/@nestjs/common.svg)](https://www.npmjs.com/\~nestjscore) [![CircleCI](https://img.shields.io/circleci/build/github/nestjs/nest/master)](https://circleci.com/gh/nestjs/nest) [![Coverage](https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9)](https://coveralls.io/github/nestjs/nest?branch=master) [![Discord](https://img.shields.io/badge/discord-online-brightgreen.svg)](https://discord.gg/G7Qnnhy) [![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer) [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor) [![](https://img.shields.io/badge/Donate-PayPal-ff3f59.svg)](https://paypal.me/kamilmysliwiec) [![Support us](https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg)](https://opencollective.com/nest#sponsor) [![](https://img.shields.io/twitter/follow/nestframework.svg?style=social\&label=Follow)](https://twitter.com/nestframework)
+
+## Products API
 
 An Graphql based api where user can read, create, delete product & listen for realtime notification about newly created & deleted product
 
-## GraphQL Schema
+something changed
 
-#### Types
+### GraphQL Schema
+
+**Types**
+
 ```
 type Delete {
   id: String!
@@ -48,7 +35,8 @@ type Product {
 }
 ```
 
-#### Queries
+**Queries**
+
 ```
 type Query {
   products: [Product!]!
@@ -56,7 +44,8 @@ type Query {
 }
 ```
 
-#### Mutations
+**Mutations**
+
 ```
 type Mutation {
   createProduct(quantity: Int!): Product!
@@ -64,7 +53,8 @@ type Mutation {
 }
 ```
 
-#### Subscriptions
+**Subscriptions**
+
 ```
 type Subscription {
   createdProduct: Product!
@@ -72,9 +62,10 @@ type Subscription {
 }
 ```
 
-## API Reference
+### API Reference
 
-#### Get All Products
+**Get All Products**
+
 ```
 query products {
   products {
@@ -87,7 +78,9 @@ query products {
   }
 }
 ```
-#### Get a specific product
+
+**Get a specific product**
+
 ```
 query product {
   product(id: "8e532ef8-88a2-44eb-8683-632badc2d106") {
@@ -101,7 +94,8 @@ query product {
 }
 ```
 
-#### Create a product 
+**Create a product**
+
 ```
 mutation createProduct{
   createProduct(quantity: 14) {
@@ -115,7 +109,8 @@ mutation createProduct{
 }
 ```
 
-#### Delete a specific product
+**Delete a specific product**
+
 ```
 mutation deleteProduct{
   deleteProduct(id: "8e532ef8-88a2-44eb-8683-632badc2d106") {
@@ -125,7 +120,8 @@ mutation deleteProduct{
 }
 ```
 
-#### Real time notification - If any product is created
+**Real time notification - If any product is created**
+
 ```
 subscription createdProduct{
   createdProduct{
@@ -138,7 +134,9 @@ subscription createdProduct{
   }
 }
 ```
-#### Real time notification - If any product is deleted
+
+**Real time notification - If any product is deleted**
+
 ```
 subscription deletedProduct {
   deletedProduct{
@@ -147,15 +145,16 @@ subscription deletedProduct {
   }
 }
 ```
+
 [Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
 
-## Installation
+### Installation
 
 ```bash
 $ npm install
 ```
 
-## Running the app
+### Running the app
 
 ```bash
 # development
@@ -168,7 +167,7 @@ $ npm run start:dev
 $ npm run start:prod
 ```
 
-## Test
+### Test
 
 ```bash
 # unit tests
@@ -181,16 +180,16 @@ $ npm run test:e2e
 $ npm run test:cov
 ```
 
-## Support
+### Support
 
 Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
 
-## Stay in touch
+### Stay in touch
 
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+* Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
+* Website - [https://nestjs.com](https://nestjs.com/)
+* Twitter - [@nestframework](https://twitter.com/nestframework)
 
-## License
+### License
 
-Nest is [MIT licensed](LICENSE).
+Nest is [MIT licensed](LICENSE/).
