@@ -10,7 +10,7 @@ A progressive [Node.js](http://nodejs.org) framework for building efficient and 
 
 An Graphql based api where user can read, create, delete product & listen for realtime notification about newly created & deleted product
 
-something changed
+
 
 ### GraphQL Schema
 
