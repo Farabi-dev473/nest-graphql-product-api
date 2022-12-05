@@ -23,7 +23,7 @@
   [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
 
 # Products API
-##SIMEPLE CHANGE
+
 An Graphql based api where user can read, create, delete product & listen for realtime notification about newly created & deleted product
 
 ## GraphQL Schema
