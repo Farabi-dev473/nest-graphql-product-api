@@ -53,14 +53,16 @@ export class ProductsService {
 
     async getAllProducts() {
     
-        const productsIds = await this.productRepository.createQueryBuilder('product')
+        const productsIds = await this.productRepository
+                                                    .createQueryBuilder('product')
                                                     .getMany()
 
         const products = []
         let product: object
         let transactions
         for(let i = 0; i < productsIds.length; i++) {
-            transactions = await this.transactionRepository.createQueryBuilder('transaction')
+            transactions = await this.transactionRepository
+                                                      .createQueryBuilder('transaction')
                                                       .where('transaction.productId = :id', {id: productsIds[i]['id']})
                                                       .getMany()
             product = {
@@ -73,12 +75,14 @@ export class ProductsService {
     }
 
     async getProduct(id: string) {
-        const { id: productId } = await this.productRepository.createQueryBuilder('product')
-                              .where('product.id = :id', {id})
-                              .getOne()
-        let transactions = await this.transactionRepository.createQueryBuilder('transaction')
-                                                             .where('transaction.productIdId = :id', {id: productId})
-                                                             .getMany()
+        const { id: productId } = await this.productRepository
+                                        .createQueryBuilder('product')
+                                        .where('product.id = :id', {id})
+                                        .getOne()
+        let transactions = await this.transactionRepository
+                                        .createQueryBuilder('transaction')
+                                        .where('transaction.productIdId = :id', {id: productId})
+                                        .getMany()
         const product = {
             id: productId,
             transactions
